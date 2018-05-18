@@ -7,8 +7,17 @@ class App extends Component {
     return (
       <div className="container app-container">
         <h4>App component</h4>
-				<AnimalList />
-      </div>
+				<div className="row">
+					<div className="col-4">
+						<AnimalList />
+					</div>
+					<div className="col-8">
+						<div>
+							<h1>Details</h1>
+						</div>
+					</div>
+				</div>
+			</div>
     )
   }
 }
