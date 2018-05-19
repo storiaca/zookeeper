@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import AnimalList from '../containers/AnimalList';
+import AnimalDetails from '../containers/AnimalDetails';
 
 class App extends Component {
 	render() {
@@ -12,9 +13,7 @@ class App extends Component {
 						<AnimalList />
 					</div>
 					<div className="col-8">
-						<div>
-							<h1>Details</h1>
-						</div>
+						<AnimalDetails />
 					</div>
 				</div>
 			</div>

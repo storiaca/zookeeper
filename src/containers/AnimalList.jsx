@@ -11,12 +11,9 @@ class AnimalList extends Component {
 			//console.log('renderAnimalsList', animal);
 			return (
 				<li key={i} 
-						className="list-group-item" 
-						onClick={() => {this.props.selectAnimal(animal)} } >
-						<p>Species: {animal.species}</p>
-						<p>Name: {animal.name}</p> 
-						<p>Gender: {animal.gender}</p>
-						<p>Age: {animal.age}</p> 
+					className="list-group-item" 
+					onClick={() => {this.props.selectAnimal(animal)} } >
+					<p>Name: {animal.name}</p> 
 				</li>
 			)
 		});
