@@ -8,12 +8,16 @@ export function selectAnimal(animal) {
 }
 
 export function getAnimalsList() {
-	const url = 'http://localhost:3000/animals';
+	
+	return function(dispatch) {
+		const url = 'http://localhost:3000/animals';
+		const request = axios.get(url);
 
-	const request = axios.get(url);
-
-	return {
-		type: 'FETCH_ANIMALS',
-		payload: request
+		request.then(response => {
+			dispatch({
+				type: 'FETCH_ANIMALS',
+				payload: response.data
+			})
+		}).catch(err => console.log(err))
 	}
 }
