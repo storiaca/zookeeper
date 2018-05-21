@@ -1,15 +1,19 @@
+import axios from 'axios';
+
 export function selectAnimal(animal) {
-    return {
-        type: 'ANIMAL_CLICKED',
-        payload: animal
-    }
+	return {
+		type: 'ANIMAL_CLICKED',
+		payload: animal
+	}
 }
 
-export function fetchAnimals() {
-		// do some AJAX -> let response = do AJAX magic here
-		
-		return {
-			type: 'FETCH_ANIMAL',
-			payload: response
-		}
+export function getAnimalsList() {
+	const url = 'http://localhost:3000/animals';
+
+	const request = axios.get(url);
+
+	return {
+		type: 'FETCH_ANIMALS',
+		payload: request
+	}
 }

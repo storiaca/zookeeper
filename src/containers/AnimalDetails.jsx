@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 class AnimalDetails extends Component {
 
 	render() {
-		console.log('details', this);
 
 		if (!this.props.selectedAnimal) {
 			return (
