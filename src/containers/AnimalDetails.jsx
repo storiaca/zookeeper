@@ -3,28 +3,24 @@ import { connect } from 'react-redux';
 
 class AnimalDetails extends Component {
 
-	render(){
-		console.log('details', this.props);
+	render() {
+		console.log('details', this);
 
-		if(!this.props.selectedAnimal) {
+		if (!this.props.selectedAnimal) {
 			return (
 				<div>...</div>
 			)
 		}
-		
-		if(this.props.selectedAnimal) {
-			return(
-				<div className="card">
-					<h6>Details</h6>
-					<p>Species: {this.props.selectedAnimal.species}</p>
-					<p>Age: {this.props.selectedAnimal.age}</p>
-					<p>Gender: {(this.props.selectedAnimal.gender === 'm') ? 'male' : 'fenale'}</p>
-	
-				</div>
-			)
-		}
-		
 
+
+		return (
+			<div className="card">
+				<h6>Details</h6>
+				<div>Species : {this.props.selectedAnimal.species}</div>
+        <div>Age : {this.props.selectedAnimal.age}</div>
+				<div>Gender : {(this.props.selectedAnimal.gender === 'm') ? 'male' : (this.props.selectedAnimal.gender === 'f') ? 'female' : 'undefined gender' }</div>
+			</div>
+		)
 	}
 }
 

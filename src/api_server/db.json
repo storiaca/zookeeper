@@ -1,0 +1,64 @@
+{
+  "animals": [
+    {
+      "id": "0",
+      "species": "ape",
+      "name": "hans",
+      "gender": "m",
+      "age": "23"
+    },
+    {
+      "id": "1",
+      "species": "tortoise",
+      "name": "heide",
+      "gender": "f",
+      "age": "89"
+    },
+    {
+      "id": "2",
+      "species": "cat",
+      "name": "nini",
+      "gender": "f",
+      "age": "13"
+    },
+    {
+      "id": "3",
+      "species": "shark",
+      "name": "gert",
+      "gender": "m",
+      "age": "4"
+    },
+    {
+      "id": "4",
+      "species": "parrot",
+      "name": "lisa",
+      "gender": "f",
+      "age": "17"
+    },
+    {
+      "id": "I3SXxNF"
+    },
+    {
+      "id": "4EAu6Sr"
+    },
+    {
+      "id": "5",
+      "species": "dog",
+      "name": "paul",
+      "gender": "m",
+      "age": "2"
+    }
+  ],
+  "zookeeper": [
+    {
+      "id": "0",
+      "name": "Marc Pawel",
+      "salary": "15000"
+    },
+    {
+      "id": "1",
+      "name": "Luise Fischer",
+      "salary": "12000"
+    }
+  ]
+}

@@ -1,6 +1,8 @@
-#### react-boilerplate for the AKASKILLS Course
-- this is a boilerplate fpr AKASKILLS react-redux video hold by janpauldahlke
-- this provides a simple boilerplate that allows you to take your first steps in the react-redux world
+#### Zookeeper react redux
+- to start project run: npm run start
 
-- to start this repo blank do ```git clone https://github.com/janpauldahlke/react-boilerplate.git```
-- have fun learning and coding
+- to use db.json install json-server globaly:
+npm i -g json-server
+
+- to start server for db go in folder /src/api_json and 
+run: json-server db.json
