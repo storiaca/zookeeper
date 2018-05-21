@@ -5,4 +5,4 @@
 npm i -g json-server
 
 - to start server for db go in folder /src/api_json and 
-run: json-server db.json
+run: json-server db.json or json-server seeds.js
