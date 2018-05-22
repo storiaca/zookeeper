@@ -35,7 +35,7 @@ class AnimalList extends Component {
 	// react render
 	//-----------------------------
 	render() {
-		console.log(this.props);
+		//console.log(this.props);
 
 		if(!this.props.animalList) {
 			return(<div>Loading...</div>)

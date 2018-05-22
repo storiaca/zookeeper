@@ -6,3 +6,13 @@ body {
   min-height: 100vh;
   background-color: #fff;
 }
+
+.app-container .card {
+  position: fixed;
+  width: 300px;
+  padding: 10px;
+}
+
+.app-container .form label {
+  margin-right: 10px;
+}
