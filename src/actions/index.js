@@ -21,3 +21,4 @@ export function getAnimalsList() {
 		}).catch(err => console.log(err))
 	}
 }
+

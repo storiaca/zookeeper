@@ -7,10 +7,23 @@ import { selectAnimal, getAnimalsList } from '../actions/index';
 
 class AnimalList extends Component {
 
+	// constructor
+	constructor() {
+		super();
+	}
+
+	// lifecycle methods
+	//----------------------------
+	componentWillMount() {
+		this.props.getAnimalList();
+	}
+
+	// own method
+	//-----------------------------
 	renderAnimalsList() {
-		return this.props.animals.map((animal, i) => {
+		return this.props.animalList.map(animal => {
 			return (
-				<li key={i}
+				<li key={animal.id}
 					className="list-group-item"
 					onClick={() => { this.props.selectAnimal(animal) }} >
 					<p>Name: {animal.name}</p>
@@ -19,16 +32,19 @@ class AnimalList extends Component {
 		});
 	}
 
+	// react render
+	//-----------------------------
 	render() {
-		//console.log(this.props);
+		console.log(this.props);
+
+		if(!this.props.animalList) {
+			return(<div>Loading...</div>)
+		}
 		return (
 			<div>
 				<ul className="list-group mb-3">
 					{this.renderAnimalsList()}
 				</ul>
-				<button
-					onClick={() => { this.props.getAnimalList() }}
-					className="btn btn-success">Click me to fetch server</button>
 			</div>
 		);
 	}
@@ -37,7 +53,8 @@ class AnimalList extends Component {
 function mapStateToProps(state) {
 	return {
 		animals: state.animals,
-		selectedAnimal: state.selectedAnimal
+		selectedAnimal: state.selectedAnimal,
+		animalList: state.animalList
 	}
 }
 
