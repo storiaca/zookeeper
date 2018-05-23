@@ -42,10 +42,11 @@ class AnimalAdd extends Component {
 
 	onButtonSubmit = () => {
 		console.log('submit state', this.state);
+		this.props.createAnimal(this.state);
 	}
 
   render() {
-		console.log('animal props', this.props);
+		//console.log('animal props', this.props);
 		return(
 			<div className="form-group">
 				<form>
@@ -83,7 +84,7 @@ class AnimalAdd extends Component {
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		createAnimal
-	})
+	}, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(AnimalAdd);

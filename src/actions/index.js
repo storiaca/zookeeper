@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { FETCH_ANIMALS, CREATE_ANIMAL } from './constants';
 
+const url = 'http://localhost:3000/animals';
+
 export function selectAnimal(animal) {
 	return {
 		type: 'ANIMAL_CLICKED',
@@ -11,7 +13,7 @@ export function selectAnimal(animal) {
 export function getAnimalsList() {
 	
 	return function(dispatch) {
-		const url = 'http://localhost:3000/animals';
+		
 		const request = axios.get(url);
 
 		request.then(response => {
@@ -25,7 +27,6 @@ export function getAnimalsList() {
 
 export function createAnimal(animal) {
 	return function(dispatch) {
-		const url = 'http://localhost:3000/animals';
 		const post = axios.post(url, animal);
 
 		post.then( response => {
