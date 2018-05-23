@@ -30,8 +30,19 @@ class AnimalAdd extends Component {
 			age: parseInt(e.target.value)
 		})
 	}
+
+	onSelectGenderChange = (e) => {
+		this.setState({
+			gender: e.target.value
+		})
+	}
+
+	onButtonSubmit = () => {
+		console.log('submit state', this.state);
+	}
+
   render() {
-		console.log('animal state', this.state);
+		//console.log('animal state', this.state);
 		return(
 			<div className="form-group">
 				<form>
@@ -48,9 +59,9 @@ class AnimalAdd extends Component {
 
 						<div className="col">
 							<label>Gender:</label>
-							<select className="form-control">
-								<option value="male">Male</option>
-								<option value="female">Female</option>
+							<select onChange={this.onSelectGenderChange.bind(this)} className="form-control">
+								<option value="m">Male</option>
+								<option value="f">Female</option>
 							</select>
 						</div>
 
@@ -60,7 +71,7 @@ class AnimalAdd extends Component {
 						</div>
 					</div>
 				</form>
-				<button className="btn btn-danger">Add Animal</button>
+				<button onClick={this.onButtonSubmit} className="btn btn-danger">Add Animal</button>
 			</div>
 		);
 	}  
