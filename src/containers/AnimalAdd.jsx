@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { createAnimal } from '../actions/index';
 
 class AnimalAdd extends Component {
 	constructor() {
 		super();
 
 		this.state = {
-			name : '',
+			name: '',
 			species: '',
 			gender: 'm',
 			age: 0
@@ -42,7 +45,7 @@ class AnimalAdd extends Component {
 	}
 
   render() {
-		//console.log('animal state', this.state);
+		console.log('animal props', this.props);
 		return(
 			<div className="form-group">
 				<form>
@@ -77,4 +80,10 @@ class AnimalAdd extends Component {
 	}  
 }
 
-export default AnimalAdd;
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({
+		createAnimal
+	})
+}
+
+export default connect(null, mapDispatchToProps)(AnimalAdd);
