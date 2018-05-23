@@ -18,8 +18,20 @@ class AnimalAdd extends Component {
 			name: e.target.value
 		})
 	}
+
+	onSpeciesChange = (e) => {
+		this.setState ({
+			species: e.target.value
+		})
+	}
+
+	onAgeChange = (e) => {
+		this.setState({
+			age: parseInt(e.target.value)
+		})
+	}
   render() {
-		console.log('animal state', this.state.name);
+		console.log('animal state', this.state);
 		return(
 			<div className="form-group">
 				<form>
@@ -31,7 +43,7 @@ class AnimalAdd extends Component {
 
 						<div className="col">
 							<label>Species:</label>
-							<input type="text" className="form-control" />
+							<input type="text" onChange={this.onSpeciesChange.bind(this)} value={this.state.species} className="form-control" />
 						</div>
 
 						<div className="col">
@@ -44,7 +56,7 @@ class AnimalAdd extends Component {
 
 						<div className="col">
 							<label>Age:</label>
-							<input type="number" className="form-control" />
+							<input type="number" onChange={this.onAgeChange.bind(this)} value={this.state.age} className="form-control" />
 						</div>
 					</div>
 				</form>
