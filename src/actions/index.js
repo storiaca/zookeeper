@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_ANIMALS, CREATE_ANIMAL } from './constants';
+import { FETCH_ANIMALS, CREATE_ANIMAL, DELETE_ANIMAL } from './constants';
 
 const url = 'http://localhost:3000/animals';
 
@@ -33,6 +33,19 @@ export function createAnimal(animal) {
 			dispatch({
 				type: CREATE_ANIMAL,
 				payload: response.data
+			})
+		}).catch(err => console.log(err))
+	}
+}
+
+export function deleteAnimal(id) {
+	return function(dispatch) {
+		const del = axios.delete(`${url}/${id}`);
+
+		del.then(response => {
+			dispatch({
+				type: DELETE_ANIMAL,
+				payload: response.status
 			})
 		}).catch(err => console.log(err))
 	}

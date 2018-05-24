@@ -75,7 +75,7 @@ class AnimalAdd extends Component {
 						</div>
 					</div>
 				</form>
-				<button onClick={this.onButtonSubmit} className="btn btn-danger">Add Animal</button>
+				<button onClick={this.onButtonSubmit} className="btn btn-success">Add Animal</button>
 			</div>
 		);
 	}  

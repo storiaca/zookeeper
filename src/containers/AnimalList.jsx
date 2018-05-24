@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import * as _ from 'lodash';
 
-import { selectAnimal, getAnimalsList } from '../actions/index';
+import { selectAnimal, getAnimalsList, deleteAnimal } from '../actions/index';
 
 
 class AnimalList extends Component {
@@ -20,25 +20,33 @@ class AnimalList extends Component {
 		this.props.getAnimalList();
 	}
 
-	// own method
+	// own methods
 	//-----------------------------
+	
 	renderAnimalsList() {
 		return _.map(this.props.animalList, (animal) => {
-		//return this.props.animalList.map(animal => {
 			return (
 				<li key={animal.id}
 					className="list-group-item"
 					onClick={() => { this.props.selectAnimal(animal) }} >
 					<p>Name: {animal.name}</p>
+					<button 
+						onClick={() => {this.onDeleteButtonClick(animal.id)}}
+						className="btn btn-danger">Delete</button>
 				</li>
 			)
 		});
 	}
 
+	onDeleteButtonClick(id) {
+		//console.log(id);
+		this.props.deleteAnimal(id);
+	}
+
 	// react render
 	//-----------------------------
 	render() {
-		//console.log(this.props);
+		//console.log('props', this.props);
 
 		if(!this.props.animalList) {
 			return(<div>Loading...</div>)
@@ -64,7 +72,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		selectAnimal,
-		getAnimalList: getAnimalsList
+		getAnimalList: getAnimalsList,
+		deleteAnimal
 	}, dispatch)
 }
 

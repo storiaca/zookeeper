@@ -3,7 +3,7 @@ module.exports = function () {
 	let _ = require('lodash');
 
 	return {
-		animals: _.times(20, (num) => {
+		animals: _.times(10, (num) => {
 			return {
 				id: num,
 				name: faker.name.findName(),
