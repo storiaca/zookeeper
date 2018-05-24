@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import * as _ from 'lodash';
+
 import { selectAnimal, getAnimalsList } from '../actions/index';
 
 
@@ -21,7 +23,8 @@ class AnimalList extends Component {
 	// own method
 	//-----------------------------
 	renderAnimalsList() {
-		return this.props.animalList.map(animal => {
+		return _.map(this.props.animalList, (animal) => {
+		//return this.props.animalList.map(animal => {
 			return (
 				<li key={animal.id}
 					className="list-group-item"

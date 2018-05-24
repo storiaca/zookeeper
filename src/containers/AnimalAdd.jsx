@@ -41,7 +41,7 @@ class AnimalAdd extends Component {
 	}
 
 	onButtonSubmit = () => {
-		console.log('submit state', this.state);
+		//console.log('submit state', this.state);
 		this.props.createAnimal(this.state);
 	}
 
