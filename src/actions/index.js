@@ -45,7 +45,8 @@ export function deleteAnimal(id) {
 		del.then(response => {
 			dispatch({
 				type: DELETE_ANIMAL,
-				payload: response.status
+				payload: response.status,
+				id: id
 			})
 		}).catch(err => console.log(err))
 	}
